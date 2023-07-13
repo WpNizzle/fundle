@@ -1,7 +1,7 @@
 === Fundle Donations ===
 
 Contributors: Frenziecodes
-Tags: donations, fundraising, PayPal, shortcode
+Tags: donations, fundraising, PayPal, shortcode, charity, donate, donation, button
 Requires at least: 5.0
 Tested up to: 6.2.2
 Stable tag: 0.1.0
@@ -19,13 +19,6 @@ Plugin Features:
 - Customizable settings for the donation button
 - PayPal integration for secure and seamless donations
 - Simple shortcode for button display
-
-== Installation ==
-
-1. Upload the `fundle-donations` directory to the `/wp-content/plugins/` directory or install the plugin directly from the WordPress plugin directory.
-2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Navigate to the Fundle Donations settings page under the 'Settings' menu to configure your donation button settings.
-4. Use the provided shortcode `[fundle_donation_button]` to display the donation button on your website.
 
 == Frequently Asked Questions ==
 
