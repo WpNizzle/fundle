@@ -1,7 +1,10 @@
 <?php 
 
 /**
- * Donation button shortcode callback.
+ * Generates the Fundle Donation Button shortcode HTML.
+ *
+ * @param array $atts Shortcode attributes.
+ * @return string Generated button HTML.
  */
 function fundle_donation_button_shortcode( $atts ) {
 	// Retrieve the current settings.

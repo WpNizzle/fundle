@@ -5,10 +5,11 @@
  *
  * Simple WordPress Donation Button
  *
+ * @package Fundle
  *
  * Plugin Name: Fundle - Paypal donation button
  * Plugin URI: https://github.com/Frenziecodes/fundle
- * Description: simple lightweight setup to add a paypal donation button as a shortcode. You can add as many buttons as you need.
+ * Description: simple lightweight paypal donation button.
  * Version: 0.1.0
  * Author: Frenziecodes
  * Author URI: https://github.com/Frenziecodes

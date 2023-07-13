@@ -4,21 +4,21 @@
  * Displays the Fundle Settings page and handles form submissions.
  */
 function fundle_settings_page() {
-	if ( 'POST' === $_SERVER['REQUEST_METHOD'] ) {
+	if ( isset( $_SERVER['REQUEST_METHOD'] ) && 'POST' === $_SERVER['REQUEST_METHOD'] ) {
 		// Verify nonce.
-		$fundle_settings_nonce = isset( $_POST['fundle_settings_nonce'] ) ? wp_unslash( $_POST['fundle_settings_nonce'] ) : '';
+		$fundle_settings_nonce = isset( $_POST['fundle_settings_nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['fundle_settings_nonce'] ) ) : '';
 
 		if ( isset( $fundle_settings_nonce ) && wp_verify_nonce( $fundle_settings_nonce, 'fundle_settings_action' ) ) {
 			// Sanitize and save the settings if the form is submitted.
-			$paypal_email            = isset( $_POST['paypal_email'] ) ? sanitize_email( $_POST['paypal_email'] ) : '';
-			$cause                   = isset( $_POST['cause'] ) ? sanitize_text_field( $_POST['cause'] ) : '';
-			$currency_code           = isset( $_POST['currency_code'] ) ? sanitize_text_field( $_POST['currency_code'] ) : '';
+			$paypal_email            = isset( $_POST['paypal_email'] ) ? sanitize_email( wp_unslash( $_POST['paypal_email'] ) ) : '';
+			$cause                   = isset( $_POST['cause'] ) ? sanitize_text_field( wp_unslash( $_POST['cause'] ) ) : '';
+			$currency_code           = isset( $_POST['currency_code'] ) ? sanitize_text_field( wp_unslash( $_POST['currency_code'] ) ) : '';
 			$amount                  = isset( $_POST['amount'] ) ? absint( $_POST['amount'] ) : 0;
-			$button_label            = isset( $_POST['button_label'] ) ? sanitize_text_field( $_POST['button_label'] ) : '';
-			$button_background_color = isset( $_POST['button_background_color'] ) ? sanitize_text_field( $_POST['button_background_color'] ) : '';
-			$button_text_color       = isset( $_POST['button_text_color'] ) ? sanitize_text_field( $_POST['button_text_color'] ) : '';
+			$button_label            = isset( $_POST['button_label'] ) ? sanitize_text_field( wp_unslash( $_POST['button_label'] ) ) : '';
+			$button_background_color = isset( $_POST['button_background_color'] ) ? sanitize_text_field( wp_unslash( $_POST['button_background_color'] ) ) : '';
+			$button_text_color       = isset( $_POST['button_text_color'] ) ? sanitize_text_field( wp_unslash( $_POST['button_text_color'] ) ) : '';
 			$button_border_radius    = isset( $_POST['button_border_radius'] ) ? absint( $_POST['button_border_radius'] ) : 0;
-			$button_size             = isset( $_POST['button_size'] ) ? sanitize_text_field( $_POST['button_size'] ) : '';
+			$button_size             = isset( $_POST['button_size'] ) ? sanitize_text_field( wp_unslash( $_POST['button_size'] ) ) : '';
 
 			update_option( 'fundle_paypal_email', $paypal_email );
 			update_option( 'fundle_cause', $cause );
