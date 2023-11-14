@@ -1,4 +1,6 @@
-<?php 
+<?php
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Displays the Fundle Settings page and handles form submissions.
